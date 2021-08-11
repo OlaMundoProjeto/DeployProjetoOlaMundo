@@ -38,43 +38,100 @@ export class LayoutFeedComponent implements OnInit {
 
   ) { }
 
+  // ngOnInit() {
+
+  //   if(environment.token == ''){
+  //     alert('Sua sessão expirou, faça login novamente')
+  //     this.router.navigate(['/entrar'])
+  //   }
+
+  //   this.getAllTemas()
+  //   this.getAllPostagens()
+  // }
+
+
+  // getAllTemas(){
+  //   this.temaService.getAllTema().subscribe((resp: Tema[])=>{
+  //     this.listaTemas = resp
+
+  //   })
+  // }
+
+  // getAllPostagens(){
+  //   this.postagemService.getAllPostagens().subscribe((resp: Postagem[])=>{
+  //     this.listaPostagem = resp
+  //   })
+  // }
+
+  // findByIdTema(){
+  //   this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema)=>{
+  //     this.tema = resp
+  //   })
+  // }
+  // findByIdUsuario(){
+  //   this.authService.getByIdUsuario(this.idUser).subscribe((resp: User)=>{
+  //     this.user = resp
+  //   })
+  // }
+
+
+
+  // publicar(){
+  //   this.tema.id = this.idTema
+  //   this.postagem.tema = this.tema
+
+  //   this.user.id = this.idUser
+  //   this.postagem.usuario = this.user
+  //   this.postagem.tipoPostagem = 5
+
+  //   console.log(this.postagem)
+  //   this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem)=>{
+  //     this.postagem =  resp
+  //     alert('Postagem realizada com sucesso!')
+  //     this.postagem = new Postagem()
+  //     this.getAllPostagens()
+  //   })
+
+  // }
+
   ngOnInit() {
 
-    if(environment.token == ''){
-      alert('Sua sessão expirou, faça login novamente')
-      this.router.navigate(['/entrar'])
+    window.scroll(0,0)
+
+
+    if(environment.token == ""){
+      //alert("Sua sessão expirou! Faça login novamente!")
+      this.router.navigate(["/entrar"])
+
     }
 
     this.getAllTemas()
     this.getAllPostagens()
   }
 
-
   getAllTemas(){
-    this.temaService.getAllTema().subscribe((resp: Tema[])=>{
+    this.temaService.getAllTema().subscribe((resp: Tema[]) => {
       this.listaTemas = resp
-    
     })
   }
 
-  getAllPostagens(){
-    this.postagemService.getAllPostagens().subscribe((resp: Postagem[])=>{
-      this.listaPostagem = resp
-    })
-  }
-  
   findByIdTema(){
-    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema)=>{
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) =>{
       this.tema = resp
     })
   }
-  findByIdUsuario(){
-    this.authService.getByIdUsuario(this.idUser).subscribe((resp: User)=>{
-      this.user = resp
+
+  getAllPostagens () {
+    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
+      this.listaPostagem = resp
     })
   }
 
-
+  findByIdUsuario () {
+    this.authService.getByIdUsuario(this.idUser).subscribe((resp: User) => {
+      this.user = resp
+    })
+  }
 
   publicar(){
     this.tema.id = this.idTema
@@ -82,18 +139,14 @@ export class LayoutFeedComponent implements OnInit {
 
     this.user.id = this.idUser
     this.postagem.usuario = this.user
-    this.postagem.tipoPostagem = 5
 
-    console.log(this.postagem)
-    this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem)=>{
-      this.postagem =  resp
-      alert('Postagem realizada com sucesso!')
+    this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
+      this.postagem = resp
+      alert('Postagem publicada com sucesso!')
       this.postagem = new Postagem()
       this.getAllPostagens()
     })
-
   }
 
 
 }
-

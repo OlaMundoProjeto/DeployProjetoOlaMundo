@@ -9,3 +9,18 @@
 margin-top: 2px;
 }
 
+.fonterodape {
+  font-size: 12pt;
+  color: rgb(133, 214, 228);
+  font-family: 'Spartan', sans-serif;
+}
+
+a {
+  cursor: pointer;
+}
+
+.cormenu {
+
+  background-color: rgb(16, 68, 82);
+}
+

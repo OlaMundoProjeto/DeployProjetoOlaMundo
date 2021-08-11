@@ -10,20 +10,21 @@ import { environment } from 'src/environments/environment.prod';
   providedIn: 'root'
 })
 export class AuthService {
+  [x: string]: any;
 
   constructor(private http: HttpClient) { }
 
 
   entrar (usuarioLogin: UserLogin): Observable<UserLogin> {
-    return this.http.post<UserLogin>("https://olamundoprojeto.herokuapp.com/usuarios/logar" , usuarioLogin)
+    return this.http.post<UserLogin>("https://olamundobackend.herokuapp.com/usuarios/logar" , usuarioLogin)
   }
 
   cadastrar (usuario: User): Observable<User> {
-    return this.http.post<User>("https://olamundoprojeto.herokuapp.com/usuarios/cadastrar", usuario)
+    return this.http.post<User>("https://olamundobackend.herokuapp.com/usuarios/cadastrar", usuario)
 
   }
   getByIdUsuario(id: number): Observable<User>{
-    return this.http.get<User>(`https://olamundoprojeto.herokuapp.com/usuarios/${id}`)
+    return this.http.get<User>(`https://olamundobackend.herokuapp.com/usuarios/${id}`)
   }
 
 // logado
@@ -39,12 +40,12 @@ export class AuthService {
 
     // atualizar
     atualizar (usuario: User): Observable<User>{
-      return this.http.put<User>('https://olamundoprojeto.herokuapp.com/usuarios/alterar', usuario)
+      return this.http.put<User>('https://olamundobackend.herokuapp.com/usuarios/alterar', usuario)
     }
-  
-    
+
+
   }
-  
+
     // criando variavel OK determinando que é booleana e falsa.
     // retornando ok = retornando falso. significa que o método está retornando um boolean.
     // começa com o OK falso e caso seja diferente de vazio = verdadeiro.
