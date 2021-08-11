@@ -1,0 +1,21 @@
+#img-bg {
+
+  background-image: url(https://imgur.com/moD8Whb.jpg);
+
+  height: 350px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+ }
+
+ h1 {
+
+  padding: 120px;
+  height: 300px;
+  width: 450px;
+  font-family: 'Spartan', sans-serif;
+  font-size: 30px;
+
+ }
