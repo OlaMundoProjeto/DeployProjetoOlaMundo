@@ -262,12 +262,12 @@
                  
                   <p class="card-text">
                     <small class="text-muted">
-                    <button class="btn" >
-                      <i class="fal fa-thumbs-down" aria-hidden="true"></i>
-                    </button>
-                    Curtidas: {{ postagem.curtir }}
-                    <button class="btn" (click)='getPostagemById(postagem.id)' (click)='curtida(postagem.id)'>
-                     <i class="fal fa-thumbs-up" aria-hidden="true"></i>
+                      <button class="btn" (click)='getPostagemById(item.id)' (click)='descurtida(item.id)'>
+                        <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                       </button>
+                    Curtidas: {{ item.curtidas }}
+                    <button class="btn" (click)='getPostagemById(item.id)' (click)='curtida(item.id)'>
+                     <i class="fa fa-thumbs-up" aria-hidden="true"></i>
                     </button>
                    </small>
                   </p>

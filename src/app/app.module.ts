@@ -24,6 +24,7 @@ import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.compon
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { AlertaComponent } from './alerta/alerta.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { AlertaComponent } from './alerta/alerta.component';
     PostagemDeleteComponent,
     UsuarioEditComponent,
     AlertaComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
